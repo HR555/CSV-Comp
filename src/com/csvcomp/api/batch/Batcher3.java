@@ -8,7 +8,9 @@ import java.util.List;
 public class Batcher3 {
 
 	HashMap<String,List<String>> batches = new HashMap<>();
-	ArrayList<String[]> duplicates = new ArrayList<>();
+	HashSet<String[]> duplicates = new HashSet<>();
+	
+	DuplicatesImp allDuplicates = new DuplicatesImp();
 	
 	public void addBatch(String batchID, String docID) {
 

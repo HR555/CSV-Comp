@@ -1,24 +1,23 @@
 package com.csvcomp.api.batch;
 
-import java.util.Set;
+import com.google.common.collect.Multimap;
 
 public class DuplicatesImp implements Duplicates {
 
 	private String BatchID=null;
 	private String DocID=null;
-	private String[] docs = null;
 	
 	void addDuplicates(String[] record){
 		
 		this.BatchID=record[1];
 		this.DocID=record[2];
 		
-		docs = duplicates.get(BatchID);
 		
+		duplicates.put(BatchID, DocID);
 		
 	}
 	
-	Set<String[]> getDuplicates() {
+	Multimap<String,String> getDuplicates() {
 		return duplicates;
 	}
 	
